@@ -13,11 +13,11 @@ A stack is used in two phases of evaluating an expression such as
 Infix to postfix conversion
 Scan through an expression, getting one token at a time.
 
-1. Fix a priority level for each operator. For example, from high to low:
+1. Fix a priority level for each operator. For example, from low to high:
 
-    3.    - (unary negation)
-    2.    * /
-    1.    + - (subtraction)
+        + - (subtraction)
+        * /
+        - (unary negation)
 
 Thus, high priority corresponds to high number in the table.
 
@@ -119,5 +119,57 @@ An **Agent** is anything that can be viewed as perceiving its environment throug
 
 ###### Single Agent
 *  An agent operating by itself in an evironment.
+
+
+# Wumpus World Game
+ It has :
+        1. One room of rumpus
+        2. 3 rooms of pits
+        3. 1 room of Gold
+
+Goal: find the gold and shoot the wumpus while avoiding being eaten by the Wumpus and falling into the pits
+
+## Model
+
+• Rooms adjacent to rumpus stitch
+• Rooms adjacent to pits breeze
+• Rooms with Gold glitter
+• The agent has one arrow
+• If you shoot at the wumpus, Wumpus dies
+• If wumpus an agent are in the same room rumpus will kill the agent
+• One wumpus, 3pits and 1 gold are instantiated randomly, position 1, 2 and 2, 1 are empty the start position of the agent is 1,1
+
+## Actuators
+
+• Move forward
+• Turn left
+• Turn right
+• Shoot
+
+## Sensors
+• Stink
+• Glitter
+• Breeze
+• Bump
+• Scream
+
+## State variables
+
+• Pij is true if there is a pit in the room
+• Bij is true if an agent perceives a breeze in a room ij
+• Wij is true is there’s a rumpus in-room ij
+• Sij is true if an agent perceives stench from ij
+• Vij is true room ij is visited
+• Gij if there is gold in-room ij
+• Okij is true if room ij is OK to visit
+
+[] Impelmentation of Wumpums World 
+
+
+
+
+
+
+
 
 
