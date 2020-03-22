@@ -122,10 +122,11 @@ An **Agent** is anything that can be viewed as perceiving its environment throug
 
 
 # Wumpus World Game
- It has :
-        1. One room of rumpus
-        2. 3 rooms of pits
-        3. 1 room of Gold
+
+It has the following components :
+              *  One room of rumpus
+              *  3 rooms of pits
+              *  1 room of Gold
 
 Goal: find the gold and shoot the wumpus while avoiding being eaten by the Wumpus and falling into the pits
 
