@@ -131,37 +131,37 @@ Goal: find the gold and shoot the wumpus while avoiding being eaten by the Wumpu
 
 ## Model
 
-• Rooms adjacent to rumpus stitch
-• Rooms adjacent to pits breeze
-• Rooms with Gold glitter
-• The agent has one arrow
-• If you shoot at the wumpus, Wumpus dies
-• If wumpus an agent are in the same room rumpus will kill the agent
-• One wumpus, 3pits and 1 gold are instantiated randomly, position 1, 2 and 2, 1 are empty the start position of the agent is 1,1
+       • Rooms adjacent to rumpus stitch
+       • Rooms adjacent to pits breeze
+       • Rooms with Gold glitter
+       • The agent has one arrow
+       • If you shoot at the wumpus, Wumpus dies
+       • If wumpus an agent are in the same room rumpus will kill the agent
+       • One wumpus, 3pits and 1 gold are instantiated randomly, position 1, 2 and 2, 1 are empty the start position of the agent is 1,1
 
 ## Actuators
 
-• Move forward
-• Turn left
-• Turn right
-• Shoot
+       • Move forward
+       • Turn left
+       • Turn right
+       • Shoot
 
 ## Sensors
-• Stink
-• Glitter
-• Breeze
-• Bump
-• Scream
+       • Stink
+       • Glitter
+       • Breeze
+       • Bump
+       • Scream
 
 ## State variables
 
-• Pij is true if there is a pit in the room
-• Bij is true if an agent perceives a breeze in a room ij
-• Wij is true is there’s a rumpus in-room ij
-• Sij is true if an agent perceives stench from ij
-• Vij is true room ij is visited
-• Gij if there is gold in-room ij
-• Okij is true if room ij is OK to visit
+       • Pij is true if there is a pit in the room
+       • Bij is true if an agent perceives a breeze in a room ij
+       • Wij is true is there’s a rumpus in-room ij
+       • Sij is true if an agent perceives stench from ij
+       • Vij is true room ij is visited
+       • Gij if there is gold in-room ij
+       • Okij is true if room ij is OK to visit
 
 [] Impelmentation of Wumpums World 
 
