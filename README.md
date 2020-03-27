@@ -179,11 +179,9 @@ The project is organized using the following way:
 
  * Goals of the Methods :
 
-     * return the model, and will be used by both the UI and the agent
-     * return the room at the given id and will be accesible only for the UI
-     * attempts to kill wumpus at the given room id if it exists. Used by the agent
-     * return the grid with all the informations. Only used by UI
-     * return wumpus life status. Only used by UI
+     * return the model 
+     * return the room of a given id to check if it is accessible
+     * return the grid with all the informations. 
      * return agent related informations. Only used by UI
      * initialize the grid according to the specifications.
 
