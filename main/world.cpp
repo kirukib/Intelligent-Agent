@@ -252,3 +252,19 @@ namespace wumpus_project
 	{
 		std::cout << "Last Action: " << getLastAction(agent.lastAction) << std::endl;
 	}
+		float World::randomFloat ( void )
+	{
+		return static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+	}
+
+	// Randomly generate a int between 0 and limit
+	int World::randomInt ( int limit )
+	{
+		return rand()%limit;
+	}
+	
+	void World::setStepByStep ( bool sBS )
+	{
+		stepByStep = sBS;
+	}
+}
