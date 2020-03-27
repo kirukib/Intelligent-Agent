@@ -167,9 +167,7 @@ Goal: find the gold and shoot the wumpus while avoiding being eaten by the Wumpu
 
 ## Wumpus world Impelmentation
 
-The project is organized using the following classes:
-
-* Room : an object that will have set of truth values telling the knowledge about the room.
+The project is organized using the following way:
 
 * World : an object representing the whole grid and contents in the grid.
 
@@ -179,34 +177,21 @@ The project is organized using the following classes:
      * Model
      * Agent_status // Moves left and information on the current room.
 
- * Methods :
+ * Goals of the Methods :
 
-     * get_model() // return the model, and will be used by both the UI and the agent
-     * get_room(room_id) // return the room at the given id and will be accesible only for the UI
-     * kill_at(room_id) // attempts to kill wumpus at the given room id if it exists. Used by the agent
-     * get_grid() // return the grid with all the informations. Only used by UI
-     * get_wumpusstat() // return wumpus life status. Only used by UI
-     * get_agentstat() // return agent related informations. Only used by UI
-     * grid_init() // initialize the grid according to the specifications.
+     * return the model, and will be used by both the UI and the agent
+     * return the room at the given id and will be accesible only for the UI
+     * attempts to kill wumpus at the given room id if it exists. Used by the agent
+     * return the grid with all the informations. Only used by UI
+     * return wumpus life status. Only used by UI
+     * return agent related informations. Only used by UI
+     * initialize the grid according to the specifications.
 
+* Agent 
+ 
+An agent is a program that can make decisions or perform a service based on its environment, user input and experiences. These programs can be used to autonomously gather information on a regular, programmed schedule or when prompted by the user in real time. In this case using the sensors evaulate where to and find the GOLD!
 
-* Variables:
-     
-     * perception_history
-     * agent_status // life, remaining arrow and current room
-     * grid // to depict and fill own version of the world grid
-     * model // to hold copy of the model in the world
-     * ok_rooms // for holding stack of safe rooms but unvisited rooms.
-
-* Evaluation Methods:
-
-       - get_agent_status()
-       - program_evaluator(premises, conclusion)
-       - get_perception()
-       - shoot(Grid_id)
-       - go_to(Grid_id)
-       - rule_match()
-       - play()
+       
 
 
 
