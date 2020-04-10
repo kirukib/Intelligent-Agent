@@ -38,17 +38,17 @@ namespace wumpus_project
 	private:
 		// Class Variables
 		size_t dimension;				// Dimension of square game board
-		int points;						// Agent Score
-		bool goldLooted;				// True if gold was successfully picked up
-		bool canAgentShot;				// True if the agent can shoot
-		bool running;					// True if the game is running
-		bool gameOver;					// True if the game is over
-		bool stepByStep;				// True if in debug mode ( displays board and info after every move )
-		MyAI agent;						// The agent
-		Coordinate facing;				// The agent's direction
-		Coordinate position;			// The agent's position
-		Tile** board;					// The game board
-		std::set<Agent::Percept> ps;	// The set of percepts to be passed to agent
+		int points; // Agent Score
+		bool goldLooted; // True if gold was successfully picked up
+		bool canAgentShot; // True if the agent can shoot
+		bool running; // True if the game is running
+		bool gameOver; // True if the game is over
+		bool stepByStep; // True if in debug mode ( displays board and info after every move )
+		MyAI agent; // The agent
+		Coordinate facing; // The agent's direction
+		Coordinate position; // The agent's position
+		Tile** board; // The game board
+		std::set<Agent::Percept> ps; // The set of percepts to be passed to agent
 		
 		// World Generation Functions
 		void genWorld 	( void );
@@ -60,9 +60,9 @@ namespace wumpus_project
 		bool isInBounds	( size_t r, size_t c );
 		
 		// Core functions in main loop
-		void perceive 	( void );		// The agent will detect and perceive percepts on call to this function.
-		void act		( void );		// This function will ask the agent for an action and carry it out.
-		void react		( void );		// This function will check if the play has died from a pit or a wumpus and end the game if necessary.
+		void perceive 	( void ); // The agent will detect and perceive percepts on call to this function.
+		void act ( void ); // This function will ask the agent for an action and carry it out.
+		void react( void ); // This function will check if the play has died from a pit or a wumpus and end the game if necessary.
 		
 		// Game Information Functions
 		void printBoard	( void );
