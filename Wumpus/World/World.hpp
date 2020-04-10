@@ -65,18 +65,18 @@ namespace wumpus_project
 		void react		( void );		// This function will check if the play has died from a pit or a wumpus and end the game if necessary.
 		
 		// Game Information Functions
-		void 		printBoard					( void );
-		void 		printScore					( void );
-		void 		printPerceptions			( void );
-		void 		printAgentDirection			( void );
-		void 		printLastAction				( void );
-		std::string getLastAction				( Agent::Action a );
-		std::string getPercept					( Agent::Percept p );
+		void printBoard	( void );
+		void printScore	( void );
+		void printPerceptions ( void );
+		void printAgentDirection ( void );
+		void printLastAction ( void );
+		std::string getLastAction ( Agent::Action a );
+		std::string getPercept ( Agent::Percept p );
 		
 		// Helper Functions
-		Coordinate	move			( Coordinate p, Coordinate f );	// This function returns the tile from position p one step in direction f.
-		float		randomFloat		( void );						// Randomly generate a float between 0 and 1
-		int			randomInt		( int limit );					// Randomly generate a int between 0 and limit
+		Coordinate move ( Coordinate p, Coordinate f );	// This function returns the tile from position p one step in direction f.
+		float randomFloat (void ); // Randomly generate a float between 0 and 1
+		int randomInt ( int limit ); // Randomly generate a int between 0 and limit
 	};
 }
 
