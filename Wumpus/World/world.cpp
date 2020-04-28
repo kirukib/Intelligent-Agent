@@ -4,8 +4,8 @@ using namespace std;
 
 namespace wumpus_project
 {
-	// Construct a board from file.
-	World::World ( char *filename )
+	// Construct a board 
+	World:: World ()
 	{
 		// Class Attributes
 		running = false;
@@ -14,15 +14,11 @@ namespace wumpus_project
 		goldLooted = false;
 		canAgentShot = true;
 		points = 0;
-		facing = std::pair<int, int>(0,1);
-		position = std::pair<int, int>(0,0);
 		
-		// Generating board from filename
-		ifstream file;
-		file.open(filename);
 		
 		// Create a blank board
-		file >> dimension;
+
+		cin >> dimension;
 		board = new Tile*[dimension];
 		for ( int i = 0; i < dimension; i++ )
 			board[i] = new Tile[dimension];
@@ -34,33 +30,29 @@ namespace wumpus_project
 		int x, y;
 		
 		// Add the Wumpus
-		file >> x >> y;
+		cin >> x >> y;
 		addWumpus ( x, y );
 		
 		// Add the Gold
-		file >> x >> y;
+		cin >> x >> y;
 		addGold ( x, y );
 		
 		// Add the Pits
 		int numOfPits;
-		file >> numOfPits;
+		cin >> numOfPits;
 		
-		while ( numOfPits > 0 && !file.eof() )
+		while ( numOfPits > 0)
 		{
 			--numOfPits;
-			file >> x >> y;
+			cin>> x >> y;
 			addPit ( x, y );
 		}
 		
-		// Initialize the agent
-		agent = WumpusAgent();
-		board[0][0].agent = true;
-		
-		file.close();
+
 	}
 
 	// Construct a randomly generated board from fixed dimensions.
-	World::World ( const size_t dim )
+	World:: World ( const size_t dim )
 	{
 		// Class Attributes
 		running = false;
@@ -70,8 +62,7 @@ namespace wumpus_project
 		canAgentShot = true;
 		points = 0;
 		dimension = dim;
-		facing = std::pair<int, int>(0,1);
-		position = std::pair<int, int>(0,0);
+		
 		
 		board = new Tile*[dimension];
 		for ( int i = 0; i < dimension; i++ )
@@ -79,9 +70,7 @@ namespace wumpus_project
 		
 		genWorld();
 		
-		/* Initialize the agent
-		board[0][0].agent = true;
-		agent = WumpusAgent(); */
+	
 	}
 
 	// Deconstructor
@@ -93,6 +82,7 @@ namespace wumpus_project
 		delete [] board;
 	}
 
+	
 	// Randomly generate a legal world.
 	void World::genWorld ( void )
 	{
@@ -179,41 +169,13 @@ namespace wumpus_project
 		return ( r < dimension && c < dimension );
 	}
 
-	// Start game
-	void World::run ( void )
-	{
-		perceive();
-		
-		running = true;
-		
-		while ( running )
-		{
-			if ( stepByStep )
-			{
-				printGameInfo();
-				
-				// Pause the game
-				std::cout << "Press ENTER to continue...";
-				std::cin.ignore( 999, '\n');
-			}
-			
-			ps.clear();		// Empty Precept set, so no lingering, buggy percepts
-			act(); 			// This will account for bump and scream.
-			perceive();		// This won't account for bump and scream.
-			react();		// This will check if the player has died from a pit or a wumpus.
-		}
-	}
 
-	// The agent will detect and perceive percepts on call to this function.
-	
 
 	void World::printGameInfo ( void )
 	{
 		printBoard();
 		printScore();
-		printPerceptions();
-		printAgentDirection();
-		printLastAction();
+	
 	}
 	
 	void World::printBoard ( void )
@@ -232,26 +194,6 @@ namespace wumpus_project
 		std::cout << "Score: " << points << std::endl;
 	}
 	
-
-	void World::printAgentDirection ( void )
-	{
-		std::string direction;
-		if (facing.first == 1 && facing.second == 0)
-			direction = "DOWN";
-		else if (facing.first == -1 && facing.second == 0)
-			direction = "UP";
-		else if (facing.first == 0 && facing.second == 1)
-			direction = "RIGHT";
-		else if (facing.first == 0 && facing.second == -1)
-			direction = "LEFT";
-
-		std::cout << "Agent Facing: " << direction << std::endl;
-	}
-
-	void World::printLastAction ( void )
-	{
-		std::cout << "Last Action: " << getLastAction(agent.lastAction) << std::endl;
-	}
 	float World::randomFloat ( void )
 	{
 		return static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
