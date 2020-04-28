@@ -16,7 +16,8 @@ namespace wumpus_project
 		bool deadWumpus;
 		bool gold;
 		bool breeze;
-		bool stench;		bool goldLooted;				// True if gold was successfully picked up
+		bool stench;
+		bool goldLooted; // True if gold was successfully picked up
 
 		bool agent;
 		
