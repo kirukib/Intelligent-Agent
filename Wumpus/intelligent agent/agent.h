@@ -28,16 +28,6 @@ public:
 	void shoot(); //decrements arrow count by 1
 	void grabGold(); //take the gold here
 	int myScore(); //returns current score
-	char * myName(); //returns agent's name
-	int iamhuman(); //returns 1 if the agent is human
-	int amihome(int x,int y); //checks to see if agent is at home
-	void wazzup (int here[6],int x,int y,int dir); //tells the agent about everything but home and scream
-	void hearScream(); //the Wumpus be dead
-	void bailed(); //the agent has escaped
-	void batsHere(int x, int y); //tells the agent that there really are bats in that square
-	char action(); //returns the "keypress" of the agent playing
-	int blocked(char temp); //returns blocking code for character
-	char blockedSide(char side); //returns contents of sqaure to right or left
-	char nextSquare(); //returns the contents of the next square in the direciton that the agent is facing
+	
 };
 #endif
