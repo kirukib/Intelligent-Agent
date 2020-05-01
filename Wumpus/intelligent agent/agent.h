@@ -1,6 +1,3 @@
-/*
-	Agent header file
-*/
 #ifndef AGENT_H
 #define AGENT_H
 #include <cstdlib>
