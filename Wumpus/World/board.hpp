@@ -18,7 +18,6 @@ namespace wumpus_project
 		bool breeze;
 		bool stench;
 		bool goldLooted; // True if gold was successfully picked up
-
 		bool agent;
 		
 		std::string stringTile()
