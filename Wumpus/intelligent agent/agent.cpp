@@ -50,7 +50,7 @@ public:
 	char nextSquare(); //returns the contents of the next square in the direciton that the agent is facing
 };
 #endif
-#include "Agent.h"
+#include "agent.h"
 
 void Agent::updatemap()
 {
